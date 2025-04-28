@@ -1,0 +1,264 @@
+fileFormatVersion: 2
+guid: 477c9eaa59ba3464a9ac3627656bcc17
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 16ed9d5b11ac2024a95d15cbc62fb363, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 58248fd196842824f94d8aedf3798724, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 8ef6efef9383ea845a9a8f58d7af5a27, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SofaOrange
+    second: {fileID: 2100000, guid: 6c93c36442389bf419744b25f6478322, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: furniture_texture
+    second: {fileID: 2100000, guid: 608b8d2859b04dd44967d5c64b5408d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: furniture_texture.002
+    second: {fileID: 2100000, guid: c991108d0e320fd448b9309b03d29224, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: furniture_texture.011
+    second: {fileID: 2100000, guid: 30c82fe7e35f06a4b8e205a6b96a31a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: furniture_texture.020
+    second: {fileID: 2100000, guid: 8ab70e8bed8f1ae4f950d5ea3b4a666f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: furniture_texture.021
+    second: {fileID: 2100000, guid: 55bdb967a1a65c64daa6cccdfb3a5833, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: furniture_texture.024
+    second: {fileID: 2100000, guid: 14776d129a611bf4d9d70eaf2fac993b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: furniture_texture.025
+    second: {fileID: 2100000, guid: f60ccfd704842d343bc710def735d48d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: furniture_texture.026
+    second: {fileID: 2100000, guid: ff50dc170bb892b4e9b14fe3bd73a1e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: furniture_texture.040
+    second: {fileID: 2100000, guid: a2582ec599306d64f9b4c0456818cba3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: furniture_texture.043
+    second: {fileID: 2100000, guid: 54d43ed9af1bbd042b683b60eb32d44f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: furniture_texture.051
+    second: {fileID: 2100000, guid: e5550b67de92fc7489b4a747c8560880, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiny_treats_1
+    second: {fileID: 2100000, guid: 7a76fa52c93d770498ff2c2b6cfeedf8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiny_treats_1.009
+    second: {fileID: 2100000, guid: afa1ce6b1b26d954896a9f9f0f57f665, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiny_treats_1.010
+    second: {fileID: 2100000, guid: 2d132668566e347499bc9f0e96c08a97, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiny_treats_1.011
+    second: {fileID: 2100000, guid: 7bcd93e0b5b2aa14cac7312e475bd07d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiny_treats_1.014
+    second: {fileID: 2100000, guid: df7a7e28b8204894ea9efca0a0d51f66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiny_treats_1.017
+    second: {fileID: 2100000, guid: 81c457d789779ed41a8ccd51e71642da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiny_treats_1.019
+    second: {fileID: 2100000, guid: bb416f8533e6dd54ea268c909dedc419, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiny_treats_1.030
+    second: {fileID: 2100000, guid: 24206152be1d38a40bca463b71dd0f98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiny_treats_1.033
+    second: {fileID: 2100000, guid: 0ed3f55de52812e40b3f503066ae4cf7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiny_treats_1.036
+    second: {fileID: 2100000, guid: f5ebc60f659076b4f96aa23e6719f673, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiny_treats_1.038
+    second: {fileID: 2100000, guid: 8c04b5d6b1d31c14aa4b09e3554b5958, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiny_treats_1.039
+    second: {fileID: 2100000, guid: 1a322ffb788ef6144b8129ffa4edce8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiny_treats_1.047
+    second: {fileID: 2100000, guid: 257efd9e0529e2a42a81856fe34757a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiny_treats_1.053
+    second: {fileID: 2100000, guid: d2b0e3804f95c82488b286637398bb64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiny_treats_1.054
+    second: {fileID: 2100000, guid: 99cb0aa7a9aade848b99cada04f5f9bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tiny_treats_1_GLASS.003
+    second: {fileID: 2100000, guid: e133f34c6e79b394bac6475a2690286f, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
