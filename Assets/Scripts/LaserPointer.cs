@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
+[RequireComponent(typeof(XRGrabInteractable))]
 public class LaserPointer : MonoBehaviour
 {
     public Transform laserOrigin;
@@ -8,9 +10,23 @@ public class LaserPointer : MonoBehaviour
     public LayerMask floorLayer;
     public Vector3 currentHitPoint;
 
-    public InputActionReference toggleLaserAction; // ✅ Link this in the inspector
+    public InputActionReference toggleLaserAction; // Link this in the inspector
 
     private bool laserActive = false;
+    private XRGrabInteractable grabInteractable;
+
+    void Awake()
+    {
+        grabInteractable = GetComponent<XRGrabInteractable>();
+        grabInteractable.selectEntered.AddListener(OnGrab);
+        grabInteractable.selectExited.AddListener(OnRelease);
+    }
+
+    void OnDestroy()
+    {
+        grabInteractable.selectEntered.RemoveListener(OnGrab);
+        grabInteractable.selectExited.RemoveListener(OnRelease);
+    }
 
     void OnEnable()
     {
@@ -51,13 +67,17 @@ public class LaserPointer : MonoBehaviour
         laserBeam.SetPosition(0, laserOrigin.position);
         laserBeam.SetPosition(1, endPoint);
     }
-    
-    public void OnGrab()
+
+    // Called when grabbed
+    public void OnGrab(SelectEnterEventArgs args)
     {
-        // Optionally enable laser on grab if you want
+        // Optional: Turn laser on when grabbed
+        // laserActive = true;
+        // laserBeam.enabled = true;
     }
 
-    public void OnRelease()
+    // Called when released (dropped)
+    public void OnRelease(SelectExitEventArgs args)
     {
         laserActive = false;
         laserBeam.enabled = false;
