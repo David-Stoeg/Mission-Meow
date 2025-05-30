@@ -13,6 +13,8 @@ public class LaserPointer : MonoBehaviour
     public InputActionReference toggleLaserAction; // Link this in the inspector
 
     private bool laserActive = false;
+    private bool isGrabbed = false;
+
     private XRGrabInteractable grabInteractable;
 
     void Awake()
@@ -58,6 +60,8 @@ public class LaserPointer : MonoBehaviour
 
     void ToggleLaser(InputAction.CallbackContext context)
     {
+        if (!isGrabbed) return; // Only allow toggling laser while grabbed
+
         laserActive = !laserActive;
         laserBeam.enabled = laserActive;
     }
@@ -68,17 +72,17 @@ public class LaserPointer : MonoBehaviour
         laserBeam.SetPosition(1, endPoint);
     }
 
-    // Called when grabbed
     public void OnGrab(SelectEnterEventArgs args)
     {
-        // Optional: Turn laser on when grabbed
+        isGrabbed = true;
+        // Optional: Enable laser automatically when grabbed
         // laserActive = true;
         // laserBeam.enabled = true;
     }
 
-    // Called when released (dropped)
     public void OnRelease(SelectExitEventArgs args)
     {
+        isGrabbed = false;
         laserActive = false;
         laserBeam.enabled = false;
     }
