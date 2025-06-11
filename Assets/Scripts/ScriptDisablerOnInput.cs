@@ -12,6 +12,12 @@ public class ScriptDisablerOnInput : MonoBehaviour
     [SerializeField, Tooltip("Tag used to identify the player (e.g., XR Origin)")]
     private string playerTag = "Player";
 
+    [SerializeField, Tooltip("UI element to show after deactivation")]
+    private GameObject newUIElement;
+
+    [SerializeField, Tooltip("Input action (e.g., Y button) to hide the new UI")]
+    private InputActionReference hideUIAction;
+
     private bool playerInTrigger = false;
     private bool hasBeenDeactivated = false;
 
@@ -22,6 +28,12 @@ public class ScriptDisablerOnInput : MonoBehaviour
             inputAction.action.performed += OnInputPerformed;
             inputAction.action.Enable();
         }
+
+        if (hideUIAction != null)
+        {
+            hideUIAction.action.performed += OnHideUIPerformed;
+            hideUIAction.action.Enable();
+        }
     }
 
     private void OnDisable()
@@ -30,6 +42,12 @@ public class ScriptDisablerOnInput : MonoBehaviour
         {
             inputAction.action.performed -= OnInputPerformed;
             inputAction.action.Disable();
+        }
+
+        if (hideUIAction != null)
+        {
+            hideUIAction.action.performed -= OnHideUIPerformed;
+            hideUIAction.action.Disable();
         }
     }
 
@@ -49,10 +67,9 @@ public class ScriptDisablerOnInput : MonoBehaviour
         {
             if (script != null && script.enabled)
             {
-                // Special handling for UITriggerZone
                 if (script is UITriggerZone uiTrigger)
                 {
-                    uiTrigger.PermanentlyDisable(); // 🔒 Make sure it never reactivates
+                    uiTrigger.PermanentlyDisable();
                 }
 
                 script.enabled = false;
@@ -62,12 +79,26 @@ public class ScriptDisablerOnInput : MonoBehaviour
 
         hasBeenDeactivated = true;
 
-        // Stop listening after deactivation (optional)
         if (inputAction != null)
         {
             inputAction.action.performed -= OnInputPerformed;
             inputAction.action.Disable();
-            Debug.Log("[ScriptDisablerOnInput] Input disabled after deactivation.");
+        }
+
+        // Show the new UI element
+        if (newUIElement != null)
+        {
+            newUIElement.SetActive(true);
+            Debug.Log("[ScriptDisablerOnInput] New UI element activated.");
+        }
+    }
+
+    private void OnHideUIPerformed(InputAction.CallbackContext context)
+    {
+        if (newUIElement != null && newUIElement.activeSelf)
+        {
+            newUIElement.SetActive(false);
+            Debug.Log("[ScriptDisablerOnInput] New UI element hidden via input.");
         }
     }
 
