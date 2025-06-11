@@ -5,7 +5,7 @@ public class VRMainMenu : MonoBehaviour
 {
     public void LoadGameScene()
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene("GameScene_updated");
     }
 
     public void QuitGame()
