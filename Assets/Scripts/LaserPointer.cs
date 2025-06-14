@@ -1,21 +1,30 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
+using System.Collections;
 
 [RequireComponent(typeof(XRGrabInteractable))]
 public class LaserPointer : MonoBehaviour
 {
+    [Header("Laser Setup")]
     public Transform laserOrigin;
     public LineRenderer laserBeam;
     public LayerMask floorLayer;
-    public Vector3 currentHitPoint;
 
+    [Header("Input")]
     public InputActionReference toggleLaserAction; // Link this in the inspector
 
-    private bool laserActive = false;
-    private bool isGrabbed = false;
+    [Header("Respawn Settings")]
+    public Transform playerHead; // Assign XR Origin's camera here
+    public float respawnDelay = 15f;
+    public float respawnDistance = 1.5f;
 
     private XRGrabInteractable grabInteractable;
+    private Vector3 currentHitPoint;
+    private bool laserActive = false;
+    private bool isGrabbed = false;
+    private bool hasBeenGrabbedOnce = false;
+    private Coroutine respawnCoroutine;
 
     void Awake()
     {
@@ -60,7 +69,7 @@ public class LaserPointer : MonoBehaviour
 
     void ToggleLaser(InputAction.CallbackContext context)
     {
-        if (!isGrabbed) return; // Only allow toggling laser while grabbed
+        if (!isGrabbed) return; // Only allow toggling laser while held
 
         laserActive = !laserActive;
         laserBeam.enabled = laserActive;
@@ -75,9 +84,16 @@ public class LaserPointer : MonoBehaviour
     public void OnGrab(SelectEnterEventArgs args)
     {
         isGrabbed = true;
-        // Optional: Enable laser automatically when grabbed
-        // laserActive = true;
-        // laserBeam.enabled = true;
+
+        if (!hasBeenGrabbedOnce)
+            hasBeenGrabbedOnce = true;
+
+        // Cancel any pending respawn
+        if (respawnCoroutine != null)
+        {
+            StopCoroutine(respawnCoroutine);
+            respawnCoroutine = null;
+        }
     }
 
     public void OnRelease(SelectExitEventArgs args)
@@ -85,6 +101,44 @@ public class LaserPointer : MonoBehaviour
         isGrabbed = false;
         laserActive = false;
         laserBeam.enabled = false;
+
+        // Start respawn timer if we've used the pointer at least once
+        if (hasBeenGrabbedOnce)
+        {
+            respawnCoroutine = StartCoroutine(RespawnAfterDelay());
+        }
+    }
+
+    private IEnumerator RespawnAfterDelay()
+    {
+        float timer = 0f;
+
+        while (timer < respawnDelay)
+        {
+            if (isGrabbed) yield break; // Cancel if picked up again
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        RespawnInFrontOfPlayer();
+    }
+
+    private void RespawnInFrontOfPlayer()
+    {
+        if (playerHead == null) return;
+
+        Vector3 forwardFlat = new Vector3(playerHead.forward.x, 0f, playerHead.forward.z).normalized;
+        Vector3 newPosition = playerHead.position + forwardFlat * respawnDistance;
+
+        transform.position = newPosition;
+        transform.rotation = Quaternion.LookRotation(forwardFlat);
+
+        // Optional: reset physics
+        if (TryGetComponent<Rigidbody>(out var rb))
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
     }
 
     public Vector3 GetHitPoint() => currentHitPoint;
