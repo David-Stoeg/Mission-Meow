@@ -13,8 +13,8 @@ public class OpenDoorOnTrigger : MonoBehaviour
     {
         if (hasOpened) return;
 
-        // Optional: Check if the object is the player or a specific tag
-        // if (!other.CompareTag("Player")) return;
+        // ✅ Only trigger when object has the "Player" tag
+        if (!other.CompareTag("Player")) return;
 
         if (doorAnimator != null)
             doorAnimator.Play(animationName);

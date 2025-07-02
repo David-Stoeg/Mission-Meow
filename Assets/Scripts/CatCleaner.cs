@@ -27,6 +27,19 @@ public class CatCleaner : MonoBehaviour
     [Tooltip("Another collider to enable after cleaning (replaces UI)")]
     [SerializeField] private Collider additionalColliderToEnable;
 
+    [Header("Door Settings")]
+    [Tooltip("Animator controlling the door")]
+    [SerializeField] private Animator doorAnimator;
+
+    [Tooltip("Animation clip name to play when opening the door")]
+    [SerializeField] private string doorAnimationName = "DoorOpenLast";
+
+    [Tooltip("Sound clip to play when door opens")]
+    [SerializeField] private AudioClip doorOpenClip;
+
+    [Tooltip("AudioSource to play the door sound")]
+    [SerializeField] private AudioSource doorAudioSource;
+
     private float broomContactTime = 0f;
     private bool isCleaning = false;
     private bool isPlayingSound = false;
@@ -36,10 +49,8 @@ public class CatCleaner : MonoBehaviour
 
     private void Awake()
     {
-        // Find a ParticleSystem on this GameObject or any child
         targetParticleSystem = GetComponentInChildren<ParticleSystem>();
 
-        // Make sure both colliders are initially disabled
         if (colliderToEnable != null)
             colliderToEnable.enabled = false;
 
@@ -92,12 +103,17 @@ public class CatCleaner : MonoBehaviour
         if (targetParticleSystem != null)
         {
             targetParticleSystem.Stop();
-            targetParticleSystem.gameObject.SetActive(false); // optional
+            targetParticleSystem.gameObject.SetActive(false);
         }
 
         if (cleaningAudioSource != null && cleanCompleteClip != null)
         {
             cleaningAudioSource.PlayOneShot(cleanCompleteClip);
+            StartCoroutine(OpenDoorAfterSound(cleanCompleteClip.length));
+        }
+        else
+        {
+            OpenDoor();
         }
 
         if (colliderToEnable != null)
@@ -105,6 +121,25 @@ public class CatCleaner : MonoBehaviour
 
         if (additionalColliderToEnable != null)
             additionalColliderToEnable.enabled = true;
+    }
+
+    private System.Collections.IEnumerator OpenDoorAfterSound(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        OpenDoor();
+    }
+
+    private void OpenDoor()
+    {
+        if (doorAnimator != null && !string.IsNullOrEmpty(doorAnimationName))
+        {
+            doorAnimator.Play(doorAnimationName);
+        }
+
+        if (doorAudioSource != null && doorOpenClip != null)
+        {
+            doorAudioSource.PlayOneShot(doorOpenClip);
+        }
     }
 
     private void StartCleaningSound()

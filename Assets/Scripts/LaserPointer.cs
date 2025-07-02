@@ -105,22 +105,35 @@ public class LaserPointer : MonoBehaviour
         // Start respawn timer if we've used the pointer at least once
         if (hasBeenGrabbedOnce)
         {
+            if (respawnCoroutine != null)
+            {
+                StopCoroutine(respawnCoroutine);
+            }
             respawnCoroutine = StartCoroutine(RespawnAfterDelay());
         }
     }
 
     private IEnumerator RespawnAfterDelay()
     {
-        float timer = 0f;
-
-        while (timer < respawnDelay)
+        while (true)
         {
-            if (isGrabbed) yield break; // Cancel if picked up again
-            timer += Time.deltaTime;
-            yield return null;
-        }
+            float timer = 0f;
 
-        RespawnInFrontOfPlayer();
+            while (timer < respawnDelay)
+            {
+                if (isGrabbed) yield break; // Cancel if picked up again
+                timer += Time.deltaTime;
+                yield return null;
+            }
+
+            if (!isGrabbed)
+            {
+                RespawnInFrontOfPlayer();
+            }
+
+            // Continue the loop only if it's still not grabbed
+            if (isGrabbed) yield break;
+        }
     }
 
     private void RespawnInFrontOfPlayer()
