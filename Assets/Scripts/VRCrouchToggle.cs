@@ -4,12 +4,12 @@ using UnityEngine.InputSystem;
 public class VRCrouchToggle : MonoBehaviour
 {
     [Header("References")]
-    public Transform cameraOffset;  // Assign the 'Camera Offset' GameObject under XR Origin
+    public Transform cameraOffset;  // This should be the Camera Offset GameObject under XR Origin
     public InputActionReference toggleCrouchAction;
 
     [Header("Settings")]
-    public float crouchY = -0.5f;
-    private float originalY;
+    public float standingY = 1.6f;   // Choose a good standing eye height
+    public float crouchY = 1.1f;     // Desired crouch eye height
     private bool isCrouching = false;
 
     void Start()
@@ -20,7 +20,11 @@ public class VRCrouchToggle : MonoBehaviour
             enabled = false;
             return;
         }
-        originalY = cameraOffset.localPosition.y;
+
+        // Set the camera offset to standing at start
+        Vector3 pos = cameraOffset.localPosition;
+        pos.y = standingY;
+        cameraOffset.localPosition = pos;
     }
 
     void OnEnable()
@@ -40,7 +44,7 @@ public class VRCrouchToggle : MonoBehaviour
         isCrouching = !isCrouching;
 
         Vector3 pos = cameraOffset.localPosition;
-        pos.y = isCrouching ? originalY + crouchY : originalY;
+        pos.y = isCrouching ? crouchY : standingY;
         cameraOffset.localPosition = pos;
     }
 }

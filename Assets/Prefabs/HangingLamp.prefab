@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5fde88ed24f1f04a823a6ce8378daaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetColliderName: SirWobble_2
 --- !u!95 &2826072833102712066
 Animator:
   serializedVersion: 5
