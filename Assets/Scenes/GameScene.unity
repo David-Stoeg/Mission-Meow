@@ -5431,7 +5431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &957815251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20965,21 +20965,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1998444939238849005
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8952003595506061968}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.000000035459205, y: 0.34297976, z: 0.000000012947128, w: 0.93934286}
-  m_LocalPosition: {x: 1.35, y: 0.35, z: 14.56}
-  m_LocalScale: {x: 100.00001, y: 100, z: 100.00001}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5402026666117373749}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1998849331980092259
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22726,14 +22711,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!33 &2979316855201877493
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8952003595506061968}
-  m_Mesh: {fileID: 5846447747800317454, guid: 3524d1c4d1bee434a9e6b96a4958dcd7, type: 3}
 --- !u!4 &3000509991473413439
 Transform:
   m_ObjectHideFlags: 0
@@ -29318,7 +29295,6 @@ Transform:
   - {fileID: 7148143237668334005}
   - {fileID: 5896977116589420247}
   - {fileID: 1342928261026852601}
-  - {fileID: 1998444939238849005}
   - {fileID: 4124920987434637952}
   - {fileID: 1475341817795942289}
   - {fileID: 7660654677672292667}
@@ -31596,48 +31572,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4657212417440865735, guid: 3524d1c4d1bee434a9e6b96a4958dcd7, type: 3}
---- !u!23 &6238681309599448422
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8952003595506061968}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: -4586444591600750072, guid: 3524d1c4d1bee434a9e6b96a4958dcd7, type: 3}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &6239981504129068618
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -39283,63 +39217,6 @@ MonoBehaviour:
     type: 3}
   standingY: 0.65
   crouchY: 0.25
---- !u!1 &8952003595506061968
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1998444939238849005}
-  - component: {fileID: 2979316855201877493}
-  - component: {fileID: 6238681309599448422}
-  - component: {fileID: 8952003595506061969}
-  - component: {fileID: 8952003595506061970}
-  m_Layer: 0
-  m_Name: Key-Bath
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &8952003595506061969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8952003595506061968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 603bb21571f4a904c92cfc18f9949aed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doorAnimator: {fileID: 6416228717865066969}
-  animationName: DoorOpen
-  doorAudioSource: {fileID: 6526404032166672969}
-  doorOpenClip: {fileID: 8300000, guid: 1f3004f54f056c94bad241b29d2531f1, type: 3}
---- !u!65 &8952003595506061970
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8952003595506061968}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.009654941, y: 0.004909346, z: 0.001588482}
-  m_Center: {x: -0.0023769569, y: -0.000004152418, z: 1.4751525e-20}
 --- !u!1 &8964333059868976681
 GameObject:
   m_ObjectHideFlags: 0
